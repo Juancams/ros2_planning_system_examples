@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include <memory>
+#include <random>
 
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_action/rclcpp_action.hpp"
@@ -29,7 +30,9 @@ public:
   using GoalHandleNavigateToPose = rclcpp_action::ServerGoalHandle<NavigateToPose>;
 
   Nav2Sim()
-  : Node("navigate_to_pose_server")
+  : Node("navigate_to_pose_server"),
+    gen_(rd_()),
+    distrib_(5, 35)
   {
   }
 
@@ -50,6 +53,9 @@ public:
 private:
   rclcpp_action::Server<NavigateToPose>::SharedPtr repeat_sentence_action_server_;
   NavigateToPose::Goal current_goal_;
+  std::random_device rd_;
+  std::mt19937 gen_;
+  std::uniform_int_distribution<> distrib_;
 
   rclcpp_action::GoalResponse handle_goal(
     const rclcpp_action::GoalUUID & uuid,
@@ -75,13 +81,15 @@ private:
     tf2::Quaternion q;
     tf2::fromMsg(pose_cmd.orientation, q);
 
+    int duration_secs = distrib_(gen_);
+
     RCLCPP_INFO(
-      this->get_logger(), "Starting navigation to %lf, %lf, %lf",
-      pose_cmd.position.x, pose_cmd.position.y, q.getAngle());
+      this->get_logger(), "Starting navigation to %lf, %lf, %lf for %d secs",
+      pose_cmd.position.x, pose_cmd.position.y, q.getAngle(), duration_secs);
 
     auto start = now();
     int current_times = 0;
-    while (rclcpp::ok() && current_times++ < 10) {
+    while (rclcpp::ok() && current_times++ < duration_secs) {
       RCLCPP_INFO(this->get_logger(), "Navigating %d ", current_times);
 
       if (goal_handle->is_canceling()) {

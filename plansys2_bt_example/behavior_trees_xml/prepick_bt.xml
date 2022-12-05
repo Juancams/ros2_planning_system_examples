@@ -1,0 +1,383 @@
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <Parallel success_threshold="2" failure_threshold="1">
+      <Sequence name="(move r2d2 assembly_zone body_car_zone):0">
+        <Sequence name="(move r2d2 assembly_zone body_car_zone):0">
+          <WaitAction action="(move r2d2 assembly_zone body_car_zone):0 START :0 INIT 0.000000 inf"/>
+          <WaitAtStartReq action="(move r2d2 assembly_zone body_car_zone):0"/>
+          <ApplyAtStartEffect action="(move r2d2 assembly_zone body_car_zone):0"/>
+        </Sequence>
+        <Sequence name="(move r2d2 assembly_zone body_car_zone):0">
+          <Sequence name="(move r2d2 assembly_zone body_car_zone):0">
+            <ReactiveSequence name="(move r2d2 assembly_zone body_car_zone):0">
+              <CheckOverAllReq action="(move r2d2 assembly_zone body_car_zone):0"/>
+              <ExecuteAction action="(move r2d2 assembly_zone body_car_zone):0"/>
+            </ReactiveSequence>
+            <CheckAction action="(move r2d2 assembly_zone body_car_zone):0 END (move r2d2 assembly_zone body_car_zone):0 START 20.000000 20.000000"/>
+            <CheckAtEndReq action="(move r2d2 assembly_zone body_car_zone):0"/>
+            <ApplyAtEndEffect action="(move r2d2 assembly_zone body_car_zone):0"/>
+          </Sequence>
+          <Sequence name="(prepick r2d2 body_car_1 body_car_zone):15001">
+            <WaitAction action="(prepick r2d2 body_car_1 body_car_zone):15001 END (move r2d2 assembly_zone body_car_zone):0 END 0.000000 inf"/>
+            <Sequence name="(pick r2d2 body_car_1 body_car_zone):20002">
+              <Sequence name="(pick r2d2 body_car_1 body_car_zone):20002">
+                <WaitAction action="(pick r2d2 body_car_1 body_car_zone):20002 START (prepick r2d2 body_car_1 body_car_zone):15001 END 0.000000 inf"/>
+                <WaitAtStartReq action="(pick r2d2 body_car_1 body_car_zone):20002"/>
+                <ApplyAtStartEffect action="(pick r2d2 body_car_1 body_car_zone):20002"/>
+              </Sequence>
+              <Sequence name="(pick r2d2 body_car_1 body_car_zone):20002">
+                <Sequence name="(pick r2d2 body_car_1 body_car_zone):20002">
+                  <ReactiveSequence name="(pick r2d2 body_car_1 body_car_zone):20002">
+                    <CheckOverAllReq action="(pick r2d2 body_car_1 body_car_zone):20002"/>
+                    <ExecuteAction action="(pick r2d2 body_car_1 body_car_zone):20002"/>
+                  </ReactiveSequence>
+                  <CheckAction action="(pick r2d2 body_car_1 body_car_zone):20002 END (pick r2d2 body_car_1 body_car_zone):20002 START 5.000000 5.000000"/>
+                  <CheckAtEndReq action="(pick r2d2 body_car_1 body_car_zone):20002"/>
+                  <ApplyAtEndEffect action="(pick r2d2 body_car_1 body_car_zone):20002"/>
+                </Sequence>
+                <Parallel success_threshold="2" failure_threshold="1">
+                  <Sequence name="(prerelease r2d2 body_car_1 assembly_zone):40003">
+                    <Sequence name="(prerelease r2d2 body_car_1 assembly_zone):40003">
+                      <WaitAction action="(prerelease r2d2 body_car_1 assembly_zone):40003 START (pick r2d2 body_car_1 body_car_zone):20002 END 15.000000 inf"/>
+                      <WaitAtStartReq action="(prerelease r2d2 body_car_1 assembly_zone):40003"/>
+                      <ApplyAtStartEffect action="(prerelease r2d2 body_car_1 assembly_zone):40003"/>
+                    </Sequence>
+                    <Sequence name="(prerelease r2d2 body_car_1 assembly_zone):40003">
+                      <Sequence name="(prerelease r2d2 body_car_1 assembly_zone):40003">
+                        <ReactiveSequence name="(prerelease r2d2 body_car_1 assembly_zone):40003">
+                          <CheckOverAllReq action="(prerelease r2d2 body_car_1 assembly_zone):40003"/>
+                          <ExecuteAction action="(prerelease r2d2 body_car_1 assembly_zone):40003"/>
+                        </ReactiveSequence>
+                        <CheckAction action="(prerelease r2d2 body_car_1 assembly_zone):40003 END (move r2d2 body_car_zone assembly_zone):25002 END 0.000000 inf"/>
+                        <CheckAction action="(prerelease r2d2 body_car_1 assembly_zone):40003 END (prerelease r2d2 body_car_1 assembly_zone):40003 START 5.000000 5.000000"/>
+                        <CheckAtEndReq action="(prerelease r2d2 body_car_1 assembly_zone):40003"/>
+                        <ApplyAtEndEffect action="(prerelease r2d2 body_car_1 assembly_zone):40003"/>
+                      </Sequence>
+                      <Sequence name="(release r2d2 body_car_1 assembly_zone):45004">
+                        <Sequence name="(release r2d2 body_car_1 assembly_zone):45004">
+                          <WaitAction action="(release r2d2 body_car_1 assembly_zone):45004 START (prerelease r2d2 body_car_1 assembly_zone):40003 END 0.000000 inf"/>
+                          <WaitAtStartReq action="(release r2d2 body_car_1 assembly_zone):45004"/>
+                          <ApplyAtStartEffect action="(release r2d2 body_car_1 assembly_zone):45004"/>
+                        </Sequence>
+                        <Sequence name="(release r2d2 body_car_1 assembly_zone):45004">
+                          <Sequence name="(release r2d2 body_car_1 assembly_zone):45004">
+                            <ReactiveSequence name="(release r2d2 body_car_1 assembly_zone):45004">
+                              <CheckOverAllReq action="(release r2d2 body_car_1 assembly_zone):45004"/>
+                              <ExecuteAction action="(release r2d2 body_car_1 assembly_zone):45004"/>
+                            </ReactiveSequence>
+                            <CheckAction action="(release r2d2 body_car_1 assembly_zone):45004 END (release r2d2 body_car_1 assembly_zone):45004 START 5.000000 5.000000"/>
+                            <CheckAtEndReq action="(release r2d2 body_car_1 assembly_zone):45004"/>
+                            <ApplyAtEndEffect action="(release r2d2 body_car_1 assembly_zone):45004"/>
+                          </Sequence>
+                          <Parallel success_threshold="2" failure_threshold="1">
+                            <Sequence name="(move r2d2 assembly_zone steering_wheels_zone):50004">
+                              <Sequence name="(move r2d2 assembly_zone steering_wheels_zone):50004">
+                                <WaitAction action="(move r2d2 assembly_zone steering_wheels_zone):50004 START (release r2d2 body_car_1 assembly_zone):45004 END 0.000000 inf"/>
+                                <WaitAtStartReq action="(move r2d2 assembly_zone steering_wheels_zone):50004"/>
+                                <ApplyAtStartEffect action="(move r2d2 assembly_zone steering_wheels_zone):50004"/>
+                              </Sequence>
+                              <Sequence name="(move r2d2 assembly_zone steering_wheels_zone):50004">
+                                <Sequence name="(move r2d2 assembly_zone steering_wheels_zone):50004">
+                                  <ReactiveSequence name="(move r2d2 assembly_zone steering_wheels_zone):50004">
+                                    <CheckOverAllReq action="(move r2d2 assembly_zone steering_wheels_zone):50004"/>
+                                    <ExecuteAction action="(move r2d2 assembly_zone steering_wheels_zone):50004"/>
+                                  </ReactiveSequence>
+                                  <CheckAction action="(move r2d2 assembly_zone steering_wheels_zone):50004 END (move r2d2 assembly_zone steering_wheels_zone):50004 START 20.000000 20.000000"/>
+                                  <CheckAtEndReq action="(move r2d2 assembly_zone steering_wheels_zone):50004"/>
+                                  <ApplyAtEndEffect action="(move r2d2 assembly_zone steering_wheels_zone):50004"/>
+                                </Sequence>
+                                <Sequence name="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004">
+                                  <WaitAction action="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004 END (move r2d2 assembly_zone steering_wheels_zone):50004 END 0.000000 inf"/>
+                                  <Sequence name="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006">
+                                    <Sequence name="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006">
+                                      <WaitAction action="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006 START (prepick r2d2 steering_wheel_1 steering_wheels_zone):65004 END 0.000000 inf"/>
+                                      <WaitAtStartReq action="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006"/>
+                                      <ApplyAtStartEffect action="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006"/>
+                                    </Sequence>
+                                    <Sequence name="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006">
+                                      <Sequence name="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006">
+                                        <ReactiveSequence name="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006">
+                                          <CheckOverAllReq action="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006"/>
+                                          <ExecuteAction action="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006"/>
+                                        </ReactiveSequence>
+                                        <CheckAction action="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006 END (pick r2d2 steering_wheel_1 steering_wheels_zone):70006 START 5.000000 5.000000"/>
+                                        <CheckAtEndReq action="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006"/>
+                                        <ApplyAtEndEffect action="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006"/>
+                                      </Sequence>
+                                      <Parallel success_threshold="2" failure_threshold="1">
+                                        <Sequence name="(move r2d2 steering_wheels_zone assembly_zone):75006">
+                                          <Sequence name="(move r2d2 steering_wheels_zone assembly_zone):75006">
+                                            <WaitAction action="(move r2d2 steering_wheels_zone assembly_zone):75006 START (pick r2d2 steering_wheel_1 steering_wheels_zone):70006 END 0.000000 inf"/>
+                                            <WaitAtStartReq action="(move r2d2 steering_wheels_zone assembly_zone):75006"/>
+                                            <ApplyAtStartEffect action="(move r2d2 steering_wheels_zone assembly_zone):75006"/>
+                                          </Sequence>
+                                          <Sequence name="(move r2d2 steering_wheels_zone assembly_zone):75006">
+                                            <Sequence name="(move r2d2 steering_wheels_zone assembly_zone):75006">
+                                              <ReactiveSequence name="(move r2d2 steering_wheels_zone assembly_zone):75006">
+                                                <CheckOverAllReq action="(move r2d2 steering_wheels_zone assembly_zone):75006"/>
+                                                <ExecuteAction action="(move r2d2 steering_wheels_zone assembly_zone):75006"/>
+                                              </ReactiveSequence>
+                                              <CheckAction action="(move r2d2 steering_wheels_zone assembly_zone):75006 END (move r2d2 steering_wheels_zone assembly_zone):75006 START 20.000000 20.000000"/>
+                                              <CheckAtEndReq action="(move r2d2 steering_wheels_zone assembly_zone):75006"/>
+                                              <ApplyAtEndEffect action="(move r2d2 steering_wheels_zone assembly_zone):75006"/>
+                                            </Sequence>
+                                            <Sequence name="(prerelease r2d2 steering_wheel_1 assembly_zone):90007">
+                                              <WaitAction action="(prerelease r2d2 steering_wheel_1 assembly_zone):90007 END (move r2d2 steering_wheels_zone assembly_zone):75006 END 0.000000 inf"/>
+                                              <Sequence name="(release r2d2 steering_wheel_1 assembly_zone):95008">
+                                                <Sequence name="(release r2d2 steering_wheel_1 assembly_zone):95008">
+                                                  <WaitAction action="(release r2d2 steering_wheel_1 assembly_zone):95008 START (prerelease r2d2 steering_wheel_1 assembly_zone):90007 END 0.000000 inf"/>
+                                                  <WaitAtStartReq action="(release r2d2 steering_wheel_1 assembly_zone):95008"/>
+                                                  <ApplyAtStartEffect action="(release r2d2 steering_wheel_1 assembly_zone):95008"/>
+                                                </Sequence>
+                                                <Sequence name="(release r2d2 steering_wheel_1 assembly_zone):95008">
+                                                  <Sequence name="(release r2d2 steering_wheel_1 assembly_zone):95008">
+                                                    <ReactiveSequence name="(release r2d2 steering_wheel_1 assembly_zone):95008">
+                                                      <CheckOverAllReq action="(release r2d2 steering_wheel_1 assembly_zone):95008"/>
+                                                      <ExecuteAction action="(release r2d2 steering_wheel_1 assembly_zone):95008"/>
+                                                    </ReactiveSequence>
+                                                    <CheckAction action="(release r2d2 steering_wheel_1 assembly_zone):95008 END (release r2d2 steering_wheel_1 assembly_zone):95008 START 5.000000 5.000000"/>
+                                                    <CheckAtEndReq action="(release r2d2 steering_wheel_1 assembly_zone):95008"/>
+                                                    <ApplyAtEndEffect action="(release r2d2 steering_wheel_1 assembly_zone):95008"/>
+                                                  </Sequence>
+                                                  <Parallel success_threshold="2" failure_threshold="1">
+                                                    <Sequence name="(move r2d2 assembly_zone wheels_zone):100008">
+                                                      <Sequence name="(move r2d2 assembly_zone wheels_zone):100008">
+                                                        <WaitAction action="(move r2d2 assembly_zone wheels_zone):100008 START (release r2d2 steering_wheel_1 assembly_zone):95008 END 0.000000 inf"/>
+                                                        <WaitAtStartReq action="(move r2d2 assembly_zone wheels_zone):100008"/>
+                                                        <ApplyAtStartEffect action="(move r2d2 assembly_zone wheels_zone):100008"/>
+                                                      </Sequence>
+                                                      <Sequence name="(move r2d2 assembly_zone wheels_zone):100008">
+                                                        <Sequence name="(move r2d2 assembly_zone wheels_zone):100008">
+                                                          <ReactiveSequence name="(move r2d2 assembly_zone wheels_zone):100008">
+                                                            <CheckOverAllReq action="(move r2d2 assembly_zone wheels_zone):100008"/>
+                                                            <ExecuteAction action="(move r2d2 assembly_zone wheels_zone):100008"/>
+                                                          </ReactiveSequence>
+                                                          <CheckAction action="(move r2d2 assembly_zone wheels_zone):100008 END (move r2d2 assembly_zone wheels_zone):100008 START 20.000000 20.000000"/>
+                                                          <CheckAtEndReq action="(move r2d2 assembly_zone wheels_zone):100008"/>
+                                                          <ApplyAtEndEffect action="(move r2d2 assembly_zone wheels_zone):100008"/>
+                                                        </Sequence>
+                                                        <Sequence name="(prepick r2d2 wheel_1 wheels_zone):115009">
+                                                          <WaitAction action="(prepick r2d2 wheel_1 wheels_zone):115009 END (move r2d2 assembly_zone wheels_zone):100008 END 0.000000 inf"/>
+                                                          <Sequence name="(pick r2d2 wheel_1 wheels_zone):120010">
+                                                            <Sequence name="(pick r2d2 wheel_1 wheels_zone):120010">
+                                                              <WaitAction action="(pick r2d2 wheel_1 wheels_zone):120010 START (prepick r2d2 wheel_1 wheels_zone):115009 END 0.000000 inf"/>
+                                                              <WaitAtStartReq action="(pick r2d2 wheel_1 wheels_zone):120010"/>
+                                                              <ApplyAtStartEffect action="(pick r2d2 wheel_1 wheels_zone):120010"/>
+                                                            </Sequence>
+                                                            <Sequence name="(pick r2d2 wheel_1 wheels_zone):120010">
+                                                              <Sequence name="(pick r2d2 wheel_1 wheels_zone):120010">
+                                                                <ReactiveSequence name="(pick r2d2 wheel_1 wheels_zone):120010">
+                                                                  <CheckOverAllReq action="(pick r2d2 wheel_1 wheels_zone):120010"/>
+                                                                  <ExecuteAction action="(pick r2d2 wheel_1 wheels_zone):120010"/>
+                                                                </ReactiveSequence>
+                                                                <CheckAction action="(pick r2d2 wheel_1 wheels_zone):120010 END (pick r2d2 wheel_1 wheels_zone):120010 START 5.000000 5.000000"/>
+                                                                <CheckAtEndReq action="(pick r2d2 wheel_1 wheels_zone):120010"/>
+                                                                <ApplyAtEndEffect action="(pick r2d2 wheel_1 wheels_zone):120010"/>
+                                                              </Sequence>
+                                                              <Parallel success_threshold="2" failure_threshold="1">
+                                                                <Sequence name="(move r2d2 wheels_zone assembly_zone):125010">
+                                                                  <Sequence name="(move r2d2 wheels_zone assembly_zone):125010">
+                                                                    <WaitAction action="(move r2d2 wheels_zone assembly_zone):125010 START (pick r2d2 wheel_1 wheels_zone):120010 END 0.000000 inf"/>
+                                                                    <WaitAtStartReq action="(move r2d2 wheels_zone assembly_zone):125010"/>
+                                                                    <ApplyAtStartEffect action="(move r2d2 wheels_zone assembly_zone):125010"/>
+                                                                  </Sequence>
+                                                                  <Sequence name="(move r2d2 wheels_zone assembly_zone):125010">
+                                                                    <Sequence name="(move r2d2 wheels_zone assembly_zone):125010">
+                                                                      <ReactiveSequence name="(move r2d2 wheels_zone assembly_zone):125010">
+                                                                        <CheckOverAllReq action="(move r2d2 wheels_zone assembly_zone):125010"/>
+                                                                        <ExecuteAction action="(move r2d2 wheels_zone assembly_zone):125010"/>
+                                                                      </ReactiveSequence>
+                                                                      <CheckAction action="(move r2d2 wheels_zone assembly_zone):125010 END (move r2d2 wheels_zone assembly_zone):125010 START 20.000000 20.000000"/>
+                                                                      <CheckAtEndReq action="(move r2d2 wheels_zone assembly_zone):125010"/>
+                                                                      <ApplyAtEndEffect action="(move r2d2 wheels_zone assembly_zone):125010"/>
+                                                                    </Sequence>
+                                                                    <Sequence name="(prerelease r2d2 wheel_1 assembly_zone):140011">
+                                                                      <WaitAction action="(prerelease r2d2 wheel_1 assembly_zone):140011 END (move r2d2 wheels_zone assembly_zone):125010 END 0.000000 inf"/>
+                                                                      <Sequence name="(release r2d2 wheel_1 assembly_zone):145012">
+                                                                        <Sequence name="(release r2d2 wheel_1 assembly_zone):145012">
+                                                                          <WaitAction action="(release r2d2 wheel_1 assembly_zone):145012 START (prerelease r2d2 wheel_1 assembly_zone):140011 END 0.000000 inf"/>
+                                                                          <WaitAtStartReq action="(release r2d2 wheel_1 assembly_zone):145012"/>
+                                                                          <ApplyAtStartEffect action="(release r2d2 wheel_1 assembly_zone):145012"/>
+                                                                        </Sequence>
+                                                                        <Sequence name="(release r2d2 wheel_1 assembly_zone):145012">
+                                                                          <Sequence name="(release r2d2 wheel_1 assembly_zone):145012">
+                                                                            <ReactiveSequence name="(release r2d2 wheel_1 assembly_zone):145012">
+                                                                              <CheckOverAllReq action="(release r2d2 wheel_1 assembly_zone):145012"/>
+                                                                              <ExecuteAction action="(release r2d2 wheel_1 assembly_zone):145012"/>
+                                                                            </ReactiveSequence>
+                                                                            <CheckAction action="(release r2d2 wheel_1 assembly_zone):145012 END (release r2d2 wheel_1 assembly_zone):145012 START 5.000000 5.000000"/>
+                                                                            <CheckAtEndReq action="(release r2d2 wheel_1 assembly_zone):145012"/>
+                                                                            <ApplyAtEndEffect action="(release r2d2 wheel_1 assembly_zone):145012"/>
+                                                                          </Sequence>
+                                                                          <Sequence name="(assemble r2d2 assembly_zone wheel_1 body_car_1 steering_wheel_1 car_1):150013">
+                                                                            <Sequence name="(assemble r2d2 assembly_zone wheel_1 body_car_1 steering_wheel_1 car_1):150013">
+                                                                              <WaitAction action="(assemble r2d2 assembly_zone wheel_1 body_car_1 steering_wheel_1 car_1):150013 START (release r2d2 wheel_1 assembly_zone):145012 END 0.000000 inf"/>
+                                                                              <WaitAtStartReq action="(assemble r2d2 assembly_zone wheel_1 body_car_1 steering_wheel_1 car_1):150013"/>
+                                                                              <ApplyAtStartEffect action="(assemble r2d2 assembly_zone wheel_1 body_car_1 steering_wheel_1 car_1):150013"/>
+                                                                            </Sequence>
+                                                                            <Sequence name="(assemble r2d2 assembly_zone wheel_1 body_car_1 steering_wheel_1 car_1):150013">
+                                                                              <ReactiveSequence name="(assemble r2d2 assembly_zone wheel_1 body_car_1 steering_wheel_1 car_1):150013">
+                                                                                <CheckOverAllReq action="(assemble r2d2 assembly_zone wheel_1 body_car_1 steering_wheel_1 car_1):150013"/>
+                                                                                <ExecuteAction action="(assemble r2d2 assembly_zone wheel_1 body_car_1 steering_wheel_1 car_1):150013"/>
+                                                                              </ReactiveSequence>
+                                                                              <CheckAction action="(assemble r2d2 assembly_zone wheel_1 body_car_1 steering_wheel_1 car_1):150013 END (assemble r2d2 assembly_zone wheel_1 body_car_1 steering_wheel_1 car_1):150013 START 5.000000 5.000000"/>
+                                                                              <CheckAtEndReq action="(assemble r2d2 assembly_zone wheel_1 body_car_1 steering_wheel_1 car_1):150013"/>
+                                                                              <ApplyAtEndEffect action="(assemble r2d2 assembly_zone wheel_1 body_car_1 steering_wheel_1 car_1):150013"/>
+                                                                            </Sequence>
+                                                                          </Sequence>
+                                                                        </Sequence>
+                                                                      </Sequence>
+                                                                    </Sequence>
+                                                                  </Sequence>
+                                                                </Sequence>
+                                                                <Sequence name="(prerelease r2d2 wheel_1 assembly_zone):140011">
+                                                                  <Sequence name="(prerelease r2d2 wheel_1 assembly_zone):140011">
+                                                                    <WaitAction action="(prerelease r2d2 wheel_1 assembly_zone):140011 START (pick r2d2 wheel_1 wheels_zone):120010 END 15.000000 inf"/>
+                                                                    <WaitAtStartReq action="(prerelease r2d2 wheel_1 assembly_zone):140011"/>
+                                                                    <ApplyAtStartEffect action="(prerelease r2d2 wheel_1 assembly_zone):140011"/>
+                                                                  </Sequence>
+                                                                  <Sequence name="(prerelease r2d2 wheel_1 assembly_zone):140011">
+                                                                    <Sequence name="(prerelease r2d2 wheel_1 assembly_zone):140011">
+                                                                      <ReactiveSequence name="(prerelease r2d2 wheel_1 assembly_zone):140011">
+                                                                        <CheckOverAllReq action="(prerelease r2d2 wheel_1 assembly_zone):140011"/>
+                                                                        <ExecuteAction action="(prerelease r2d2 wheel_1 assembly_zone):140011"/>
+                                                                      </ReactiveSequence>
+                                                                      <CheckAction action="(prerelease r2d2 wheel_1 assembly_zone):140011 END (move r2d2 wheels_zone assembly_zone):125010 END 0.000000 inf"/>
+                                                                      <CheckAction action="(prerelease r2d2 wheel_1 assembly_zone):140011 END (prerelease r2d2 wheel_1 assembly_zone):140011 START 5.000000 5.000000"/>
+                                                                      <CheckAtEndReq action="(prerelease r2d2 wheel_1 assembly_zone):140011"/>
+                                                                      <ApplyAtEndEffect action="(prerelease r2d2 wheel_1 assembly_zone):140011"/>
+                                                                    </Sequence>
+                                                                    <WaitAction action="(release r2d2 wheel_1 assembly_zone):145012 START (prerelease r2d2 wheel_1 assembly_zone):140011 END 0.000000 inf"/>
+                                                                  </Sequence>
+                                                                </Sequence>
+                                                              </Parallel>
+                                                            </Sequence>
+                                                          </Sequence>
+                                                        </Sequence>
+                                                      </Sequence>
+                                                    </Sequence>
+                                                    <Sequence name="(prepick r2d2 wheel_1 wheels_zone):115009">
+                                                      <Sequence name="(prepick r2d2 wheel_1 wheels_zone):115009">
+                                                        <WaitAction action="(prepick r2d2 wheel_1 wheels_zone):115009 START (release r2d2 steering_wheel_1 assembly_zone):95008 END 15.000000 inf"/>
+                                                        <WaitAtStartReq action="(prepick r2d2 wheel_1 wheels_zone):115009"/>
+                                                        <ApplyAtStartEffect action="(prepick r2d2 wheel_1 wheels_zone):115009"/>
+                                                      </Sequence>
+                                                      <Sequence name="(prepick r2d2 wheel_1 wheels_zone):115009">
+                                                        <Sequence name="(prepick r2d2 wheel_1 wheels_zone):115009">
+                                                          <ReactiveSequence name="(prepick r2d2 wheel_1 wheels_zone):115009">
+                                                            <CheckOverAllReq action="(prepick r2d2 wheel_1 wheels_zone):115009"/>
+                                                            <ExecuteAction action="(prepick r2d2 wheel_1 wheels_zone):115009"/>
+                                                          </ReactiveSequence>
+                                                          <CheckAction action="(prepick r2d2 wheel_1 wheels_zone):115009 END (move r2d2 assembly_zone wheels_zone):100008 END 0.000000 inf"/>
+                                                          <CheckAction action="(prepick r2d2 wheel_1 wheels_zone):115009 END (prepick r2d2 wheel_1 wheels_zone):115009 START 5.000000 5.000000"/>
+                                                          <CheckAtEndReq action="(prepick r2d2 wheel_1 wheels_zone):115009"/>
+                                                          <ApplyAtEndEffect action="(prepick r2d2 wheel_1 wheels_zone):115009"/>
+                                                        </Sequence>
+                                                        <WaitAction action="(pick r2d2 wheel_1 wheels_zone):120010 START (prepick r2d2 wheel_1 wheels_zone):115009 END 0.000000 inf"/>
+                                                      </Sequence>
+                                                    </Sequence>
+                                                  </Parallel>
+                                                </Sequence>
+                                              </Sequence>
+                                            </Sequence>
+                                          </Sequence>
+                                        </Sequence>
+                                        <Sequence name="(prerelease r2d2 steering_wheel_1 assembly_zone):90007">
+                                          <Sequence name="(prerelease r2d2 steering_wheel_1 assembly_zone):90007">
+                                            <WaitAction action="(prerelease r2d2 steering_wheel_1 assembly_zone):90007 START (pick r2d2 steering_wheel_1 steering_wheels_zone):70006 END 15.000000 inf"/>
+                                            <WaitAtStartReq action="(prerelease r2d2 steering_wheel_1 assembly_zone):90007"/>
+                                            <ApplyAtStartEffect action="(prerelease r2d2 steering_wheel_1 assembly_zone):90007"/>
+                                          </Sequence>
+                                          <Sequence name="(prerelease r2d2 steering_wheel_1 assembly_zone):90007">
+                                            <Sequence name="(prerelease r2d2 steering_wheel_1 assembly_zone):90007">
+                                              <ReactiveSequence name="(prerelease r2d2 steering_wheel_1 assembly_zone):90007">
+                                                <CheckOverAllReq action="(prerelease r2d2 steering_wheel_1 assembly_zone):90007"/>
+                                                <ExecuteAction action="(prerelease r2d2 steering_wheel_1 assembly_zone):90007"/>
+                                              </ReactiveSequence>
+                                              <CheckAction action="(prerelease r2d2 steering_wheel_1 assembly_zone):90007 END (move r2d2 steering_wheels_zone assembly_zone):75006 END 0.000000 inf"/>
+                                              <CheckAction action="(prerelease r2d2 steering_wheel_1 assembly_zone):90007 END (prerelease r2d2 steering_wheel_1 assembly_zone):90007 START 5.000000 5.000000"/>
+                                              <CheckAtEndReq action="(prerelease r2d2 steering_wheel_1 assembly_zone):90007"/>
+                                              <ApplyAtEndEffect action="(prerelease r2d2 steering_wheel_1 assembly_zone):90007"/>
+                                            </Sequence>
+                                            <WaitAction action="(release r2d2 steering_wheel_1 assembly_zone):95008 START (prerelease r2d2 steering_wheel_1 assembly_zone):90007 END 0.000000 inf"/>
+                                          </Sequence>
+                                        </Sequence>
+                                      </Parallel>
+                                    </Sequence>
+                                  </Sequence>
+                                </Sequence>
+                              </Sequence>
+                            </Sequence>
+                            <Sequence name="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004">
+                              <Sequence name="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004">
+                                <WaitAction action="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004 START (release r2d2 body_car_1 assembly_zone):45004 END 15.000000 inf"/>
+                                <WaitAtStartReq action="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004"/>
+                                <ApplyAtStartEffect action="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004"/>
+                              </Sequence>
+                              <Sequence name="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004">
+                                <Sequence name="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004">
+                                  <ReactiveSequence name="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004">
+                                    <CheckOverAllReq action="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004"/>
+                                    <ExecuteAction action="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004"/>
+                                  </ReactiveSequence>
+                                  <CheckAction action="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004 END (move r2d2 assembly_zone steering_wheels_zone):50004 END 0.000000 inf"/>
+                                  <CheckAction action="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004 END (prepick r2d2 steering_wheel_1 steering_wheels_zone):65004 START 5.000000 5.000000"/>
+                                  <CheckAtEndReq action="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004"/>
+                                  <ApplyAtEndEffect action="(prepick r2d2 steering_wheel_1 steering_wheels_zone):65004"/>
+                                </Sequence>
+                                <WaitAction action="(pick r2d2 steering_wheel_1 steering_wheels_zone):70006 START (prepick r2d2 steering_wheel_1 steering_wheels_zone):65004 END 0.000000 inf"/>
+                              </Sequence>
+                            </Sequence>
+                          </Parallel>
+                        </Sequence>
+                      </Sequence>
+                    </Sequence>
+                  </Sequence>
+                  <Sequence name="(move r2d2 body_car_zone assembly_zone):25002">
+                    <Sequence name="(move r2d2 body_car_zone assembly_zone):25002">
+                      <WaitAction action="(move r2d2 body_car_zone assembly_zone):25002 START (pick r2d2 body_car_1 body_car_zone):20002 END 0.000000 inf"/>
+                      <WaitAtStartReq action="(move r2d2 body_car_zone assembly_zone):25002"/>
+                      <ApplyAtStartEffect action="(move r2d2 body_car_zone assembly_zone):25002"/>
+                    </Sequence>
+                    <Sequence name="(move r2d2 body_car_zone assembly_zone):25002">
+                      <Sequence name="(move r2d2 body_car_zone assembly_zone):25002">
+                        <ReactiveSequence name="(move r2d2 body_car_zone assembly_zone):25002">
+                          <CheckOverAllReq action="(move r2d2 body_car_zone assembly_zone):25002"/>
+                          <ExecuteAction action="(move r2d2 body_car_zone assembly_zone):25002"/>
+                        </ReactiveSequence>
+                        <CheckAction action="(move r2d2 body_car_zone assembly_zone):25002 END (move r2d2 body_car_zone assembly_zone):25002 START 20.000000 20.000000"/>
+                        <CheckAtEndReq action="(move r2d2 body_car_zone assembly_zone):25002"/>
+                        <ApplyAtEndEffect action="(move r2d2 body_car_zone assembly_zone):25002"/>
+                      </Sequence>
+                      <WaitAction action="(prerelease r2d2 body_car_1 assembly_zone):40003 END (move r2d2 body_car_zone assembly_zone):25002 END 0.000000 inf"/>
+                    </Sequence>
+                  </Sequence>
+                </Parallel>
+              </Sequence>
+            </Sequence>
+          </Sequence>
+        </Sequence>
+      </Sequence>
+      <Sequence name="(prepick r2d2 body_car_1 body_car_zone):15001">
+        <Sequence name="(prepick r2d2 body_car_1 body_car_zone):15001">
+          <WaitAction action="(prepick r2d2 body_car_1 body_car_zone):15001 START :0 INIT 15.000000 inf"/>
+          <WaitAtStartReq action="(prepick r2d2 body_car_1 body_car_zone):15001"/>
+          <ApplyAtStartEffect action="(prepick r2d2 body_car_1 body_car_zone):15001"/>
+        </Sequence>
+        <Sequence name="(prepick r2d2 body_car_1 body_car_zone):15001">
+          <Sequence name="(prepick r2d2 body_car_1 body_car_zone):15001">
+            <ReactiveSequence name="(prepick r2d2 body_car_1 body_car_zone):15001">
+              <CheckOverAllReq action="(prepick r2d2 body_car_1 body_car_zone):15001"/>
+              <ExecuteAction action="(prepick r2d2 body_car_1 body_car_zone):15001"/>
+            </ReactiveSequence>
+            <CheckAction action="(prepick r2d2 body_car_1 body_car_zone):15001 END (move r2d2 assembly_zone body_car_zone):0 END 0.000000 inf"/>
+            <CheckAction action="(prepick r2d2 body_car_1 body_car_zone):15001 END (prepick r2d2 body_car_1 body_car_zone):15001 START 5.000000 5.000000"/>
+            <CheckAtEndReq action="(prepick r2d2 body_car_1 body_car_zone):15001"/>
+            <ApplyAtEndEffect action="(prepick r2d2 body_car_1 body_car_zone):15001"/>
+          </Sequence>
+          <WaitAction action="(pick r2d2 body_car_1 body_car_zone):20002 START (prepick r2d2 body_car_1 body_car_zone):15001 END 0.000000 inf"/>
+        </Sequence>
+      </Sequence>
+    </Parallel>
+  </BehaviorTree>
+</root>
